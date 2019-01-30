@@ -64,7 +64,7 @@ Deploying the configuration change to enable password reset from the login scree
 1. Sign in to the [Azure portal](https://portal.azure.com) and click on **Azure Active Directory**.
 2. Browse to **Users and groups** > **All groups** > **New group**
 3. Provide a name for the group and under **Membership type** choose **Assigned**
-   * Under **Members**, choose the Azure AD joined Windows 10 devices that you want to apply the policy to.
+   * Under **Members**, choose the Azure AD joined Windows 10 devices or the hybrid Azure AD joined devices that you want to apply the policy to.
    * Click **Select**
 4. Click **Create**
 
@@ -127,7 +127,7 @@ The following policy settings are known to interfere with the ability to reset p
 
 This feature does not work for networks with 802.1x network authentication deployed and the option “Perform immediately before user logon”. For networks with 802.1x network authentication deployed it is recommended to use machine authentication to enable this feature.
 
-For Hybrid Domain Joined scenarios, a scenario exists where the SSPR workflow will complete without needing an Active Directory domain controller. Connectivity with a domain controller is required to use the new password for the first time.
+For Hybrid Domain Joined devices, the SSPR workflow will complete without needing an Active Directory domain controller HOWEVER, connectivity with a domain controller is required to use the new password for the first time.  (Scenario: User forgets password to Hybrid Domain Joined device (i.e. laptop) and is not on the domain, user can change password but will not be able to log on to device until the device is on the domain.)  
 
 ## Clean up resources
 
